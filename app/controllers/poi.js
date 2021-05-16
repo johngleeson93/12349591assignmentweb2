@@ -28,7 +28,9 @@ const Pois = {
       const newPoi = new Poi({
         name: data.name,
         description: data.description,
-        county: data.county
+        county: data.county,
+        latitude:data.latitude,
+        longitude:data.longitude
       });
       console.log("newPoi", newPoi);
       // var creatorEmail = request.auth.credentials.id;
