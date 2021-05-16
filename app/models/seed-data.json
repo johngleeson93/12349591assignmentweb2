@@ -1,0 +1,28 @@
+{
+  "users": {
+    "_model": "User",
+    "homer": {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret"
+    },
+    "donald": {
+      "firstName": "Donald",
+      "lastName": "Simpson",
+      "email": "donald@simpson.com",
+      "password": "secret"
+    }
+  },
+  "Pois": {
+    "_model": "Poi",
+    "one": {
+      "name": "ABCDE",
+      "description": "String"
+    },
+    "two": {
+      "name": "XYZ",
+      "description": "SDFGHJK"
+    }
+  }
+}

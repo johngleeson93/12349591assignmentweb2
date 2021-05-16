@@ -1,0 +1,38 @@
+{
+  "name": "12349591assignmentweb1",
+  "version": "1.0.0",
+  "description": "HDip Comp Science Enterprise Web Development ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "John Gleeson",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "@hapi/cookie": "^11.0.2",
+    "@hapi/hapi": "^20.1.0",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "^6.0.1",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7",
+    "install": "^0.13.0",
+    "mais-mongoose-seeder": "^1.0.7",
+    "mongodb": "^3.6.6",
+    "mongoose": "^5.12.9",
+    "multer": "^1.4.2",
+    "npm": "^7.13.0"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
+    "prettier": "^2.2.1"
+  },
+  "prettier": {
+    "printWidth": 120
+  }
+}
