@@ -1,15 +1,20 @@
 "use strict";
 const Poi = require("../models/poi");
+const County = require("../models/counties");
 
 const Pois = {
   home: {
-    handler: function(request, h) {
-      return h.view("home", { title: "Welcome" });
+    handler: async function(request, h) {
+      const counties = await County.find().lean();
+      return h.view("home", {
+        title: "Welcome",
+        countiesList: counties
+      });
     }
   },
    report: {
     handler: async function(request, h) {
-      const poi = await Poi.find().lean();
+      const poi = await Poi.find().populate("county").lean();
       return h.view("report", {
         title: "POIs  ",
         pois: poi,
@@ -22,7 +27,8 @@ const Pois = {
       console.log("data", data);
       const newPoi = new Poi({
         name: data.name,
-        description: data.description
+        description: data.description,
+        county: data.county
       });
       console.log("newPoi", newPoi);
       // var creatorEmail = request.auth.credentials.id;

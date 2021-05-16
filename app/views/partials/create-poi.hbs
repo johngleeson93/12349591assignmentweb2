@@ -7,6 +7,14 @@
           <input class="uk-input" id="form-stacked-text" type="text" name="name" placeholder="Name" />
         </div>
         <div class="uk-margin">
+          <label for="cars">Choose a county:</label>
+          <select name="county" class="uk-button uk-button-default" id="county" placeholder="County">
+            {{#each countiesList}}
+              <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="uk-margin">
           <textarea class="uk-textarea" rows="5" id="form-stacked-text" name="description"
                     placeholder="Description"></textarea>
         </div>

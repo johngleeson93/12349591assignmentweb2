@@ -14,15 +14,26 @@
       "password": "secret"
     }
   },
+  "county": {
+  "_model": "County",
+  "Galway": {
+    "name": "Galway"
+  },
+  "Limerick": {
+    "name": "Limerick"
+  }
+},
   "Pois": {
     "_model": "Poi",
     "one": {
       "name": "ABCDE",
-      "description": "String"
+      "description": "String",
+      "county": "->county.Limerick"
     },
     "two": {
       "name": "XYZ",
-      "description": "SDFGHJK"
+      "description": "SDFGHJK",
+      "county": "->county.Galway"
     }
   }
 }
