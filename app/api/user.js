@@ -1,13 +1,13 @@
 'use strict';
 const Boom = require('@hapi/boom');
-const Poi = require('../models/poi');
+const User = require('../models/user');
 
 const Users = {
   find: {
     auth: false,
     handler: async function (request, h) {
-      const users = await Users.find();
-      return users;
+      const user = await User.find();
+      return user;
     },
   },
   findOne: {
@@ -29,8 +29,10 @@ const Users = {
     handler: async function (request, h) {
       const data = request.payload;
       const newUser = new User({
-        name: data.name,
-        description: data.description
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        password: data.password
       });
       const  user = await newUser.save();
       if (user) {
@@ -39,7 +41,24 @@ const Users = {
       return Boom.badImplementation("error creating user");
     },
   },
+  deleteOne: {
+    auth: false,
+    handler: async function(request, h) {
+      const response = await User.deleteOne({ _id: request.params.id });
+      if (response.deletedCount == 1) {
+        return { success: true };
+      }
+      return Boom.notFound('id not found');
+    }
+  },
+  deleteAll: {
+    auth: false,
+    handler: async function (request, h) {
+      await User.remove({});
+      return { success: true };
+    }
+  },
 
-};
 
+}
 module.exports = Users;

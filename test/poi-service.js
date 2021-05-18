@@ -38,7 +38,7 @@ class PoiService {
   }
 
   async getUsers() {
-    const response = await axios.get(this.baseUrl + "/api/users");
+    const response = await axios.get(this.baseUrl + "/api/user");
     return response.data;
   }
 
@@ -46,14 +46,23 @@ class PoiService {
     try {
       const response = await axios.get(this.baseUrl + "/api/user/" + id);
       return response.data;
-      return response.data;
     } catch (e) {
       return null;
     }
   }
 
+  async deleteAllUsers() {
+    const response = await axios.delete(this.baseUrl + "/api/user");
+    return response.data;
+  }
+
   async createUser(newUser) {
-    const response = await axios.post(this.baseUrl + "/api/users", newUser);
+    const response = await axios.post(this.baseUrl + "/api/user", newUser);
+    return response.data;
+  }
+
+  async deleteOneUser(id) {
+    const response = await axios.delete(this.baseUrl + "/api/user/" + id);
     return response.data;
   }
 }
