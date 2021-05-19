@@ -1,23 +1,27 @@
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
   <table class="uk-table">
-    <caption>
-      POIs
-    </caption>
-    <thead>
-    <th>Name</th>
-    <th>Description</th>
-    <th>County</th>
-    <th>Picture</th>
-    </thead>
-    <tbody class="uk-text-left">
-    {{#each pois}}
-      <tr>
-        <td>{{name}}</td>
-        <td>{{description}}</td>
-        <td>{{county.name}}</td>
-        <td>{{poi_pic}}</td>
-      </tr>
-    {{/each}}
-    </tbody>
+    <div class="uk-child-width-expand uk-flex-center uk-flex-middle uk-text-center" uk-grid>
+      <h3>POIs</h3>
+      <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>County</th>
+      <th>Picture</th>
+      </thead>
+      <tbody class="uk-text-left">
+      {{#each pois}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{description}}</td>
+          <td>{{county.name}}</td>
+          <td>{{poi_pic}}</td>
+          <td><a href="/deletePoi/{{_id}}" class="uk-card-hover uk-padding-small"><i class="fa fa-trash"
+                                                                                     aria-hidden="true"></i></a></td>
+          <td><a href="/updatePoi/{{_id}}" class="uk-card-hover uk-padding-small"><i class="fa fa-edit"
+                                                                                     aria-hidden="true"></i></a></td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </div>
   </table>
 </div>

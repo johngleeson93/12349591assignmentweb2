@@ -12,13 +12,13 @@ const userSchema = new Schema({
 });
 
 userSchema.statics.findByEmail = function(email) {
-  return this.findOne({ email : email});
+  return this.findOne({ email: email });
 };
 
 userSchema.methods.comparePassword = function(candidatePassword) {
   const isMatch = this.password === candidatePassword;
   if (!isMatch) {
-    throw Boom.unauthorized('Password mismatch');
+    throw Boom.unauthorized("Password mismatch");
   }
   return this;
 };

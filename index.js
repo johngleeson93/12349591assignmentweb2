@@ -5,12 +5,12 @@ const Inert = require("@hapi/inert");
 const Vision = require("@hapi/vision");
 const Handlebars = require("handlebars");
 const Cookie = require("@hapi/cookie");
-const express = require('express');
-const multer = require('multer');
-const path = require('path');
+const express = require("express");
+const multer = require("multer");
+const path = require("path");
 const app = express();
-const env = require('dotenv');
-require('./app/models/db');
+const env = require("dotenv");
+require("./app/models/db");
 
 
 env.config();
@@ -20,9 +20,9 @@ const server = Hapi.server({
   host: "localhost"
 });
 
-app.use(express.static(__dirname + '/public/uploads'));
+app.use(express.static(__dirname + "/public/uploads"));
 
-const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require("mongodb").MongoClient;
 const uri = "mongodb+srv://johngleeson93:<Johnnyg93>@johnscluster.7bntq.mongodb.net/johnsCluster?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
@@ -32,12 +32,12 @@ client.connect(err => {
 });
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    cb(null, 'uploads/');
+    cb(null, "uploads/");
   },
 
   // By default, multer removes file extensions so let's add them back
   filename: function(req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
   }
 });
 server.bind({
@@ -70,8 +70,8 @@ async function init() {
     redirectTo: "/"
   });
   server.auth.default("session");
-  server.route(require("./routes"))
-  server.route(require('./routes-api'));
+  server.route(require("./routes"));
+  server.route(require("./routes-api"));
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
 }

@@ -18,7 +18,7 @@ const Accounts = {
   },
   signup: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function(request, h) {
       try {
         const payload = request.payload;
         let user = await User.findByEmail(payload.email);
@@ -30,7 +30,7 @@ const Accounts = {
           firstName: payload.firstName,
           lastName: payload.lastName,
           email: payload.email,
-          password: payload.password,
+          password: payload.password
         });
         user = await newUser.save();
         request.cookieAuth.set({ id: user.id });
@@ -38,7 +38,7 @@ const Accounts = {
       } catch (err) {
         return h.view("signup", { errors: [{ message: err.message }] });
       }
-    },
+    }
   },
   showLogin: {
     auth: false,
@@ -48,7 +48,7 @@ const Accounts = {
   },
   login: {
     auth: false,
-    handler: async function (request, h) {
+    handler: async function(request, h) {
       const { email, password } = request.payload;
       try {
         let user = await User.findByEmail(email);
@@ -62,7 +62,7 @@ const Accounts = {
       } catch (err) {
         return h.view("login", { errors: [{ message: err.message }] });
       }
-    },
+    }
   },
   logout: {
     handler: function(request, h) {

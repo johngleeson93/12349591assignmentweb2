@@ -15,14 +15,14 @@
     }
   },
   "county": {
-  "_model": "County",
-  "Galway": {
-    "name": "Galway"
+    "_model": "County",
+    "Galway": {
+      "name": "Galway"
+    },
+    "Limerick": {
+      "name": "Limerick"
+    }
   },
-  "Limerick": {
-    "name": "Limerick"
-  }
-},
   "Pois": {
     "_model": "Poi",
     "one": {

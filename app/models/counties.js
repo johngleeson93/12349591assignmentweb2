@@ -9,7 +9,7 @@ const countySchema = new Schema({
 });
 
 countySchema.statics.findByName = function(name) {
-  return this.findOne({ name : name});
+  return this.findOne({ name: name });
 };
 
 module.exports = Mongoose.model("County", countySchema);

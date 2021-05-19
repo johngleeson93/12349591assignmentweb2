@@ -1,16 +1,15 @@
 {
   "users": [
-  {
-    "firstName": "Lisa",
-    "lastName": "Simpson"
-  },
-  {
-    "firstName": "Donald",
-    "lastName": "Simpson"
-  }
-],
-  "newUser":
-  {
+    {
+      "firstName": "Lisa",
+      "lastName": "Simpson"
+    },
+    {
+      "firstName": "Donald",
+      "lastName": "Simpson"
+    }
+  ],
+  "newUser": {
     "firstName": "Barnie",
     "lastName": "Grumble"
   }

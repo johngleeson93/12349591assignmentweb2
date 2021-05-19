@@ -6,8 +6,8 @@ const Schema = Mongoose.Schema;
 const poiSchema = new Schema({
   name: String,
   description: String,
-  county: {type: Schema.Types.ObjectId, ref: 'County'},
-  latitude:Number,
+  county: { type: Schema.Types.ObjectId, ref: "County" },
+  latitude: Number,
   longitude: Number
 });
 
