@@ -50,6 +50,7 @@ async function init() {
   await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
+  server.validator(require("@hapi/joi"));
   server.views({
     engines: {
       hbs: require("handlebars")

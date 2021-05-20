@@ -1,6 +1,7 @@
 "use strict";
 const Poi = require("../models/poi");
 const County = require("../models/counties");
+const sanHtml = require("../Services/sanitize-html");
 
 const Pois = {
   home: {
@@ -24,13 +25,17 @@ const Pois = {
   create: {
     handler: async function(request, h) {
       const data = request.payload;
+      const name = sanHtml(data.name);
+      const description = sanHtml(data.description);
+      const latitude = sanHtml(data.latitude);
+      const longitude = sanHtml(data.longitude);
       console.log("data", data);
       const newPoi = new Poi({
-        name: data.name,
-        description: data.description,
+        name: name,
+        description: description,
         county: data.county,
-        latitude: data.latitude,
-        longitude: data.longitude
+        latitude: latitude,
+        longitude: longitude
       });
       console.log("newPoi", newPoi);
       // var creatorEmail = request.auth.credentials.id;
@@ -74,11 +79,16 @@ const Pois = {
       const poiId = request.params.id;
       let poi = await Poi.findOne({ _id: poiId });
       const data = request.payload;
-      poi.name = data.name;
-      poi.description = data.description;
-      poi.latitude = data.latitude;
-      poi.longitude = data.longitude;
-      console.log("poi",poi);
+      const name = sanHtml(data.name);
+      const description = sanHtml(data.description);
+      const latitude = sanHtml(data.latitude);
+      const longitude = sanHtml(data.longitude);
+      poi.name = name;
+      poi.description = description;
+      poi.county;
+      poi.latitude = latitude;
+      poi.longitude = longitude;
+      console.log("poi", poi);
       await poi.save();
       return h.redirect("/report");
     }
