@@ -2,7 +2,7 @@
 const User = require("../models/user");
 const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const sanHtml = require("../Services/sanitize-html");
 const joi = require ("@hapi/joi");
 
