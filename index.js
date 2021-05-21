@@ -22,14 +22,6 @@ const server = Hapi.server({
 
 app.use(express.static(__dirname + "/public/uploads"));
 
-const MongoClient = require("mongodb").MongoClient;
-const uri = "mongodb+srv://johngleeson93:<Johnnyg93>@johnscluster.7bntq.mongodb.net/johnsCluster?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "uploads/");
