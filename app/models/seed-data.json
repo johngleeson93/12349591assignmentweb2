@@ -43,12 +43,16 @@
     "one": {
       "name": "ABCDE",
       "description": "String",
-      "county": "->county.Limerick"
+      "county": "->county.Limerick",
+      "latitude": "100",
+      "longitude": "100"
     },
     "two": {
       "name": "XYZ",
       "description": "SDFGHJK",
-      "county": "->county.Galway"
+      "county": "->county.Galway",
+      "latitude": "20",
+      "longitude": "40"
     }
   }
 }
