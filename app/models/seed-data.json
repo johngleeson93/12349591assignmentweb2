@@ -24,15 +24,20 @@
     },
     "Dublin": {
       "name": "Dublin"
-  },
-  "Clare": {
-    "name": "Clare"},
+    },
+    "Clare": {
+      "name": "Clare"
+    },
     "Waterford": {
-      "name": "Waterford"},
+      "name": "Waterford"
+    },
     "Donegal": {
-      "name": "Donegal"},
+      "name": "Donegal"
+    },
     "Cork": {
-      "name": "Cork"},
+      "name": "Cork"
+    }
+  },
   "Pois": {
     "_model": "Poi",
     "one": {
