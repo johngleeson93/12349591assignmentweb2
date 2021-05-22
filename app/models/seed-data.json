@@ -21,8 +21,18 @@
     },
     "Limerick": {
       "name": "Limerick"
-    }
+    },
+    "Dublin": {
+      "name": "Dublin"
   },
+  "Clare": {
+    "name": "Clare"},
+    "Waterford": {
+      "name": "Waterford"},
+    "Donegal": {
+      "name": "Donegal"},
+    "Cork": {
+      "name": "Cork"},
   "Pois": {
     "_model": "Poi",
     "one": {

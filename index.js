@@ -6,7 +6,6 @@ const Vision = require("@hapi/vision");
 const Handlebars = require("handlebars");
 const Cookie = require("@hapi/cookie");
 const express = require("express");
-const multer = require("multer");
 const path = require("path");
 const app = express();
 const env = require("dotenv");
@@ -17,19 +16,6 @@ env.config();
 
 const server = Hapi.server({
   port: process.env.PORT || 3000,
-});
-
-app.use(express.static(__dirname + "/public/uploads"));
-
-const storage = multer.diskStorage({
-  destination: function(req, file, cb) {
-    cb(null, "uploads/");
-  },
-
-  // By default, multer removes file extensions so let's add them back
-  filename: function(req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
-  }
 });
 server.bind({
   users: [],

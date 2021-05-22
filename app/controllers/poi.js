@@ -38,9 +38,6 @@ const Pois = {
         longitude: longitude
       });
       console.log("newPoi", newPoi);
-      // var creatorEmail = request.auth.credentials.id;
-      // data.donor = this.users[creatorEmail];
-      // this.pois.push(data);
       await newPoi.save();
 
       return h.redirect("/report");
