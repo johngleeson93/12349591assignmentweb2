@@ -9,6 +9,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const env = require("dotenv");
+const utils = require("./app/api/utils.js");
 require("./app/models/db");
 
 
@@ -27,6 +28,7 @@ async function init() {
   await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
+  await server.register(require("hapi-auth-jwt2"));
   server.validator(require("@hapi/joi"));
   server.views({
     engines: {
@@ -46,6 +48,11 @@ async function init() {
       isSecure: false
     },
     redirectTo: "/"
+  });
+  server.auth.strategy("jwt", "jwt", {
+    key: "secretpasswordnotrevealedtoanyone",
+    validate: utils.validate,
+    verifyOptions: { algorithms: ["HS256"] },
   });
   server.auth.default("session");
   server.route(require("./routes"));

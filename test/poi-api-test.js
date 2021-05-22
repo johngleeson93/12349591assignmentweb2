@@ -1,9 +1,23 @@
 "use strict";
+const fixtures = require("./fixtures.json");
+const poiService = require("./poi-service");
 
 const assert = require("chai").assert;
 const axios = require("axios");
 
 suite("Poi API tests", function() {
+  let newUser = fixtures.newUser;
+  const poiservice = new poiService(fixtures.poiService.baseUrl);
+  suiteSetup(async function() {
+    await poiservice.deleteAllUsers();
+    const returnedUser = await poiservice.createUser(newUser);
+    const response = await poiservice.authenticate(newUser);
+  });
+
+  suiteTeardown(async function() {
+    await poiservice.deleteAllUsers();
+    poiservice.clearAuth();
+  });
   test("get Poi", async function() {
     const response = await axios.get("http://localhost:3000/api/poi");
     const pois = response.data;

@@ -61,7 +61,7 @@ suite("User API tests", function() {
     }
 
     const allUsers = await poiService.getUsers();
-    for (var i = 0; i < users.length; i++) {
+    for (let i = 0; i < users.length; i++) {
       assert(_.some([allUsers[i]], users[i]), "returnedUser must be a superset of newUser");
     }
   });

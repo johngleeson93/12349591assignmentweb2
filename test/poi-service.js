@@ -1,7 +1,6 @@
 "use strict";
 
 const axios = require("axios");
-const baseUrl = "http://localhost:3000";
 
 class PoiService {
   constructor(baseUrl) {
@@ -64,6 +63,19 @@ class PoiService {
   async deleteOneUser(id) {
     const response = await axios.delete(this.baseUrl + "/api/user/" + id);
     return response.data;
+  }
+
+  async authenticate(user) {
+    try {
+      const response = await axios.post(this.baseUrl + "/api/users/authenticate", user);
+      axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+  async clearAuth(user) {
+    axios.defaults.headers.common["Authorization"] = "";
   }
 }
 

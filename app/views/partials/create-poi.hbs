@@ -1,4 +1,6 @@
+<!--suppress ALL -->
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <!--suppress HtmlUnknownTarget -->
   <form class="uk-form-stacked uk-text-left" action="/create-poi" method="POST">
     <div class="uk-grid uk-grid-stack">
       <div class="uk-width-1-2@m">
@@ -8,7 +10,7 @@
         </div>
         <div class="uk-margin">
           <label for="County">Choose a county:</label>
-          <select name="county" class="uk-button uk-button-default" id="county" placeholder="County">
+          <label for="county"></label><select name="county" class="uk-button uk-button-default" id="county" placeholder="County">
             {{#each countiesList}}
               <option value="{{_id}}">{{name}}</option>
             {{/each}}

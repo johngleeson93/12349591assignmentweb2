@@ -14,5 +14,6 @@ module.exports = [
   { method: "GET", path: "/api/user/{id}", config: user.findOne },
   { method: "POST", path: "/api/user", config: user.create },
   { method: "DELETE", path: "/api/user/{id}", config: user.deleteOne },
-  { method: "DELETE", path: "/api/user", config: user.deleteAll }
+  { method: "DELETE", path: "/api/user", config: user.deleteAllUsers },
+  { method: 'POST', path: '/api/users/authenticate', config: user.authenticate },
 ];
