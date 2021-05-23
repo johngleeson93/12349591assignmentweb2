@@ -1,5 +1,6 @@
 const Poi = require("./app/api/poi");
 const user = require("./app/api/user");
+const counties = require("./app/api/counties");
 
 module.exports = [
   // PoIs
@@ -8,6 +9,13 @@ module.exports = [
   { method: "POST", path: "/api/poi", config: Poi.create },
   { method: "DELETE", path: "/api/poi/{id}", config: Poi.deleteOne },
   { method: "DELETE", path: "/api/poi", config: Poi.deleteAll },
+
+  //counties
+  { method: "GET", path: "/api/counties", config: counties.find },
+  { method: "GET", path: "/api/counties/{id}", config: counties.findOne },
+  { method: "POST", path: "/api/counties", config: counties.create },
+  { method: "DELETE", path: "/api/counties/{id}", config: counties.deleteOne },
+  { method: "DELETE", path: "/api/counties", config: counties.deleteAllCounties },
 
   // Users
   { method: "GET", path: "/api/user", config: user.find },

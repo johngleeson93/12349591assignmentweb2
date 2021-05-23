@@ -2,6 +2,32 @@
   "poiService": {
     "baseUrl": "http://localhost:3000"
   },
+  "counties": [
+    {
+      "name": "Galway"
+    },
+    {
+      "name": "Limerick"
+    },
+    {
+      "name": "Dublin"
+    },
+    {
+      "name": "Clare"
+    },
+    {
+      "name": "Waterford"
+    },
+    {
+      "name": "Donegal"
+    },
+    {
+      "name": "Cork"
+    }
+  ],
+  "newCounty": {
+    "name": "Westmeath"
+  },
   "users": [
     {
       "firstName": "Lisa",

@@ -77,6 +77,36 @@ class PoiService {
   async clearAuth(user) {
     axios.defaults.headers.common["Authorization"] = "";
   }
+  // CATEGORIES
+  async getCounties() {
+    const response = await axios.get(this.baseUrl + "/api/counties");
+    return response.data;
+  }
+
+  async getCounty(id) {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/counties/" + id);
+      return response.data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async createCounty(newCounty) {
+    const response = await axios.post(this.baseUrl + "/api/counties", newCounty);
+    return response.data;
+  }
+
+  async deleteAllCounties() {
+    const response = await axios.delete(this.baseUrl + "/api/counties");
+    return response.data;
+  }
+
+  async deleteOneCounty(id) {
+    const response = await axios.delete(this.baseUrl + "/api/counties/" + id);
+    return response.data;
+  }
+
 }
 
 module.exports = PoiService;
