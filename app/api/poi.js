@@ -12,6 +12,7 @@ const Pois = {
       return pois;
     }
   },
+  //api test to find one Poi and if not found throw error
   findOne: {
     auth: false,
     handler: async function(request, h) {

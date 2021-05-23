@@ -11,7 +11,7 @@ const Counties = {
       return counties;
     },
   },
-
+//api test to find one county and if not found throw error
   findOne: {
     auth: false,
       handler: async function (request, h) {
@@ -26,7 +26,7 @@ const Counties = {
       }
     },
   },
-
+//api test to create one county and if not found throw error
   create: {
     auth: false,
       handler: async function (request, h) {
@@ -41,7 +41,7 @@ const Counties = {
       return Boom.badImplementation("error creating county");
     },
   },
-
+//api test to delete all counties and if not found throw error
   deleteAllCounties: {
     auth: false,
       handler: async function (request, h) {
@@ -49,7 +49,7 @@ const Counties = {
       return { success: true };
     },
   },
-
+//api test to delete one county and if not found throw error
   deleteOne: {
     auth: false,
       handler: async function (request, h) {
