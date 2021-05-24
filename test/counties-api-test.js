@@ -4,7 +4,7 @@ const poiService = require("./poi-service");
 const fixtures = require("./fixtures.json");
 const axios = require("axios");
 
-suite("Points API tests", function () {
+suite("Counties API tests", function () {
 
   let counties = fixtures.counties;
   let newCounty = fixtures.newCounty;

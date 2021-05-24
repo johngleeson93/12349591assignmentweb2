@@ -5,7 +5,7 @@ const fixtures = require("./fixtures.json");
 const _ = require("lodash");
 const PoiService = require("./poi-service");
 
-suite("User API tests", function() {
+suite("Users API tests", function() {
   let users = fixtures.users;
   let newUser = fixtures.newUser;
 

@@ -5,7 +5,7 @@ const PoiService = require("./poi-service");
 const fixtures = require("./fixtures.json");
 const axios = require("axios");
 
-suite("Pois API tests", function () {
+suite("Comments API tests", function () {
 
   let newComments = fixtures.newComments;
   let newPoi = fixtures.newPoi;
