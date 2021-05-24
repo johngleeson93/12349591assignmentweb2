@@ -1,0 +1,65 @@
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <table class="uk-table">
+    <div class="uk-child-width-expand uk-flex-center uk-flex-middle uk-text-center" uk-grid>
+      <h3>POIs</h3>
+      <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>County</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      </thead>
+      <tbody class="uk-text-left">
+      {{#each pois}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{description}}</td>
+          <td>{{county.name}}</td>
+          <td>{{latitude}}</td>
+          <td>{{longitude}}</td>
+          <td><a href="/deletePoi/{{_id}}" class="uk-card-hover uk-padding-small"><i class="fa fa-trash"
+                                                                                     aria-hidden="true"></i></a></td>
+          <td><a href="/updatePoi/{{_id}}" class="uk-card-hover uk-padding-small"><i class="fa fa-edit"
+                                                                                     aria-hidden="true"></i></a></td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </div>
+  </table>
+</div>
+<div class="uk-margin uk-width-3xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <h3>
+    Comments
+  </h3>
+  <div class="uk-margin uk-width-2-3">
+    <h3>Leave a Comment</h3>
+    <form class="uk-form uk-text-left" action="/add-comment/{{poi._id}}" method="POST"
+          enctype="multipart/form-data">
+      <div class="">
+        <div class="">
+
+          <div class="uk-margin">
+            <div class="uk-form-controls">
+              <textarea class="uk-input" id="desc-text" type="text" name="comment" rows="5"
+                        placeholder="Type Comment here..."></textarea>
+              <div class="uk-margin">
+                <button class="submit uk-button uk-button-primary uk-button-large uk-align-right">Save Comment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="">
+
+        {{#each comments}}
+
+          <div class="uk-card uk-card-default uk-card-small uk-card-body  uk-width-3-5 uk-align-center">
+            <h3 class="uk-card-title uk-align-left">
+            </h3>
+            <p>{{comments}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </form>
+  </div>
+</div>

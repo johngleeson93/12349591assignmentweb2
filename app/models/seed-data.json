@@ -1,0 +1,58 @@
+{
+  "users": {
+    "_model": "User",
+    "homer": {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret"
+    },
+    "donald": {
+      "firstName": "Donald",
+      "lastName": "Simpson",
+      "email": "donald@simpson.com",
+      "password": "secret"
+    }
+  },
+  "county": {
+    "_model": "County",
+    "Galway": {
+      "name": "Galway"
+    },
+    "Limerick": {
+      "name": "Limerick"
+    },
+    "Dublin": {
+      "name": "Dublin"
+    },
+    "Clare": {
+      "name": "Clare"
+    },
+    "Waterford": {
+      "name": "Waterford"
+    },
+    "Donegal": {
+      "name": "Donegal"
+    },
+    "Cork": {
+      "name": "Cork"
+    }
+  },
+  "Pois": {
+    "_model": "Poi",
+    "one": {
+      "name": "ABCDE",
+      "description": "String",
+      "county": "->county.Limerick",
+      "latitude": "100",
+      "longitude": "100"
+    },
+    "two": {
+      "name": "XYZ",
+      "description": "SDFGHJK",
+      "county": "->county.Galway",
+      "latitude": "20",
+      "longitude": "40"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!--suppress ALL -->
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <!--suppress HtmlUnknownTarget -->
+  <form class="uk-form-stacked uk-text-left" action="/create-poi" method="POST">
+    <div class="uk-grid uk-grid-stack">
+      <div class="uk-width-1-2@m">
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-stacked-text">Please enter the POIs Name and Description</label>
+          <input class="uk-input" id="form-stacked-text" type="text" name="name" placeholder="Name" />
+        </div>
+        <div class="uk-margin">
+          <label for="County">Choose a county:</label>
+          <label for="county"></label><select name="county" class="uk-button uk-button-default" id="county" placeholder="County">
+            {{#each countiesList}}
+              <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="uk-margin">
+          <textarea class="uk-textarea" rows="5" id="form-stacked-text" name="description"
+                    placeholder="Description"></textarea>
+        </div>
+        <div>
+          <label class="uk-form-label" for="form-stacked-text">Please enter the POIs Latitude</label>
+          <input class="uk-input" id="form-stacked-text" type="text" name="latitude" placeholder="latitude" />
+        </div>
+        <div>
+          <label class="uk-form-label" for="form-stacked-text">Please enter the POIs Longitude</label>
+          <input class="uk-input" id="form-stacked-text" type="text" name="longitude" placeholder="longitude" />
+        </div>
+        <div class=" uk-width-2-2@m">
+          <label class="uk-form-label" for="form-stacked-text">&nbsp;</label>
+          <div class="uk-margin">
+            <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add POI</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
